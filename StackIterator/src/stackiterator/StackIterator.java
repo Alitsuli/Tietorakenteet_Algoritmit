@@ -17,10 +17,12 @@ interface Iterator {
 public class StackIterator implements Iterator {
     private ListItem  current;
     private Stack container; // container on tietorakenne, jota iteroidaan
+    int size;
 
     StackIterator (Stack c) { // konstruktori on "package visible"
         container = c;
         current = container.top;
+        size = container.getSize();
     }
     // palautetaan tieto siitä, löytyyko rakenteesta seuraava alkio
     // hmm... palautetaan tieto siitä, osoittaako nykypositio (current) alkiota vai ei.
