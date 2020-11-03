@@ -5,14 +5,49 @@
  */
 package stackproject;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
 /**
  *
  * @author kamaj
  */
 public class Stack {
 	
-    private ListItem mTop; // viite pinon huipulle
+    //private ListItem mTop; // viite pinon huipulle
     private int mSize = 0; // pinottujen alkioiden lkm
+    
+    /**
+     * Tehtävä 6
+     * LinkedList implements the Collection interface. 
+     * It uses a doubly linked list internally to store the elements. 
+     * It can store the duplicate elements. 
+     * It maintains the insertion order and is not synchronized. 
+     * In LinkedList, the manipulation is fast because no shifting is required
+     */
+    private LinkedList<String> list;
+    public Stack() {
+    	list = new LinkedList<String>();
+    }
+    
+    public void push(String aData) {
+    	mSize++;
+    	list.push(aData);
+    }
+    
+    public String pop() {
+    	mSize--;
+    	return list.pop();
+    }
+    
+    public void printItems() {
+    	System.out.println("Tulosta pinon sisältö: ");
+    	Iterator<String> itr = list.listIterator();
+    		while(itr.hasNext()) {
+    			System.out.println(itr.next());
+    		}
+    }
+    
     
     /*
     // luo uusi lista-alkio, vie se pinon huipulle
@@ -24,6 +59,7 @@ public class Stack {
         mSize++;
     }*/
     
+    /*
     // jono tehtävä 2
 	public void enqueue(String aData) {
 		ListItem newList = new ListItem();
@@ -45,7 +81,7 @@ public class Stack {
 		
 		last.setNext(newList);
 		mSize++;
-	}
+	}*/
     
 	/*
     // palauta pinon huipulla oleva alkio, jos pinossa ei ole
@@ -56,9 +92,9 @@ public class Stack {
         mSize--;
         return temp;
     }*/
-    
+   
+    /*
 	// jono tehtävä 2
-	
 	public ListItem dequeue() {
 		
 		if(mTop == null) {
@@ -70,7 +106,7 @@ public class Stack {
 		mTop = mTop.getNext();
 		mSize--;
 		return temp;
-	}
+	}*/
     
     
     // palauta pinottujen alkioiden lkm
@@ -78,6 +114,7 @@ public class Stack {
         return mSize;
     }
     
+    /*
     // tulosta pinon sisÃ¤ltÃ¶ muuttamatta pinoa
     public void printItems() {
         System.out.println("Tulosta pinon sisältö");
@@ -86,6 +123,6 @@ public class Stack {
         	System.out.println(current);
         	current = current.getNext();
         }
-    }
+    }*/
     
 }

@@ -9,6 +9,7 @@ package stackproject;
  *
  * @author kamaj
  */
+/*
 public class ListItem {
     private String mData;
     private ListItem mNext;
@@ -39,4 +40,4 @@ public class ListItem {
     
     
     
-}
+}*/

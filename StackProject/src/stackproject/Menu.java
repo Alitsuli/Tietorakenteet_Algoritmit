@@ -35,14 +35,19 @@ public class Menu {
                         case '1':
                             System.out.println("Anna alkion sisältö (merkkijono)");
                             data = new String(Lue.rivi());
-                            s.enqueue(data);
+                            s.push(data);
+                            //s.enqueue(data);
                             break;
                         case '2':
-                            ListItem item = s.dequeue();
+                            
+                        	//ListItem item = s.pop();
+                            //ListItem item = s.dequeue();
+                        	String item = s.pop();
                             if (item == null)
                                 System.out.println("Pino on tyhjä");
                             else
-                                System.out.println("Poistettu alkio: "+item.getData());
+                                //System.out.println("Poistettu alkio: "+item.getData());
+                            	System.out.println("Poistettu alkio: "+item);
                             break;
                         case '3':
                             s.printItems();
