@@ -25,11 +25,44 @@ public class BinaryTree {
     } */
     
     public void insert(String aData){ // boolean paluuarvoksi?
+    	
+    	//tarkistetaan onko puu tyhjä, jos on nii luodaan uusi solmu
+    	if(root == null) {
+    		root = new Node(aData);
+    		return;
+    	}
         
+    	//muussa tapauksessa lisää tai toista vasen 
+    	if(root.getData().compareToIgnoreCase(aData) > 0) {
+    		if(root.left() != null) {
+    			root.left().insert(aData);
+    		}else {
+    			this.setLeft(new BinaryTree(aData));
+    		}
+    		return;
+    	}
+    	
+    	//oikea puoli
+    	if(root.getData().compareToIgnoreCase(aData) > 0) {
+    		if(root.right() != null) {
+    			root.right().insert(aData);
+    		}else {
+    			this.setRight(new BinaryTree(aData));
+    		}
+    		return;
+    	}
+    	
     }
     
     public BinaryTree find(String aData){
-        
+    	
+    	if(root.getData().equals(aData)) {
+    		return this;
+    	}else if(root.getData().compareTo(aData) > 0) {
+    		return root.left().find(aData);
+    	}else if(root.getData().compareTo(aData) < 0) {
+    		return root.right().find(aData);
+    	}
         return null;
     }
     public void preOrder() {
