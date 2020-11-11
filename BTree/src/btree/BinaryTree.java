@@ -31,9 +31,9 @@ public class BinaryTree {
     		root = new Node(aData);
     		return;
     	}
-        
+    	
     	//muussa tapauksessa lisää tai toista vasen 
-    	if(root.getData().compareToIgnoreCase(aData) > 0) {
+    	if(root.getData().compareToIgnoreCase(aData) > 0) { 
     		if(root.left() != null) {
     			root.left().insert(aData);
     		}else {
@@ -43,7 +43,7 @@ public class BinaryTree {
     	}
     	
     	//oikea puoli
-    	if(root.getData().compareToIgnoreCase(aData) > 0) {
+    	if(root.getData().compareToIgnoreCase(aData) < 0) {
     		if(root.right() != null) {
     			root.right().insert(aData);
     		}else {

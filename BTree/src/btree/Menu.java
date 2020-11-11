@@ -19,7 +19,7 @@ public class Menu {
 //main loppuu --------------------------------------------------------------------------
 //printMenu alkaa------------------------------------------------------------------
         private static void printMenu() {
-                char select;
+                char select, select1;
                 BinaryTree tree = new BinaryTree(); // luo tyhjä puu
                 String data;
                 do {
