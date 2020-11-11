@@ -59,9 +59,13 @@ public class BinaryTree {
     	if(root.getData().equals(aData)) {
     		return this;
     	}else if(root.getData().compareTo(aData) > 0) {
-    		return root.left().find(aData);
+    		if(root.left() != null) {
+    			return root.left().find(aData);
+    		}
     	}else if(root.getData().compareTo(aData) < 0) {
-    		return root.right().find(aData);
+    		if(root.right() != null) {
+        		return root.right().find(aData);
+    		}
     	}
         return null;
     }
