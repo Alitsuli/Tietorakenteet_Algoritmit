@@ -54,6 +54,64 @@ public class BinaryTree {
     	
     }
     
+    public void findForDelete(String data) {
+        data = data.toLowerCase();
+        BinaryTree temp = delete(this, data);
+        if(temp != null) {
+            System.out.println("Poistettu " + data);
+        } else {
+            System.out.println("Ei löydy");
+        }
+    }
+
+    
+    private BinaryTree delete(BinaryTree tree, String data) {
+
+        if (tree == null) {
+            return null;
+        }
+        if (find(data) == null) {
+            return null;
+        }
+
+        if (data.equals(tree.root.getData())) {
+            if (tree.root.left() == null && tree.root.right() == null) {
+                System.out.println("Root poisto");
+                tree.root = null;
+            } else if (tree.root.right() == null){
+                System.out.println("Vasemman lapsen poisto");
+                Node child = tree.root.left().root;
+                tree.root = child;
+            } else if (tree.root.left() == null) {
+                System.out.println("Oikean lapsen poisto");
+                Node child = tree.root.right().root;
+                tree.root = child;
+            } 
+        } 
+        
+        if (data.compareTo(tree.root.getData()) < 0) {
+	            delete(tree.root.left(), data);
+	        } else if (data.compareTo((tree.root.getData())) > 0) {
+	            delete(tree.root.right(), data);
+        }
+
+        if (tree.root != null) {
+            if (tree.root.left() != null) {
+                if (tree.root.left().root == null) {
+                    tree.setLeft(null);
+                }
+            }
+            if (tree.root.right() != null) {
+                if (tree.root.right().root == null ) {
+                    tree.setRight(null);
+                }
+            }
+        }
+        return tree;
+
+    }
+
+    
     public BinaryTree find(String aData){
     	
     	if(root.getData().equals(aData)) {

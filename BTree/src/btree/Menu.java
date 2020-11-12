@@ -28,7 +28,8 @@ public class Menu {
                         System.out.println("\t\t\t2. Etsi avaimella");
                         System.out.println("\t\t\t3. Tulosta puu esijärjestyksessä.");
                         //System.out.println("\t\t\t3. Tulosta puu sisäjärjestyksessä.");
-                        System.out.println("\t\t\t4. lopetus ");
+                        System.out.print("\t\t\t4. Poista avaimella.");
+                        System.out.println("\n\t\t\t5. lopetus ");
                         System.out.print("\n\n"); // tehdään tyhjiä rivejä
                         select = Lue.merkki();
                         switch (select) {
@@ -50,11 +51,14 @@ public class Menu {
                             char h = Lue.merkki(); // pysäytetään kontrolli
                             break;
                         case '4':
-                            //tree.inOrder();
+                            data = Lue.rivi();
+                            tree.findForDelete(data);
+                            break;
+                        case '5':
                             break;
                         }
                 }
-                while (select != '4');
+                while (select != '5');
         }
 //printMenu loppuu ----------------------------------------------------------------
 }
