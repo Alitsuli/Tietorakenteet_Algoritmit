@@ -19,8 +19,9 @@ public class Menu {
 //main loppuu --------------------------------------------------------------------------
 //printMenu alkaa------------------------------------------------------------------
         private static void printMenu() {
-                char select, select1;
+                char select;
                 BinaryTree tree = new BinaryTree(); // luo tyhjä puu
+                
                 String data;
                 do {
 
@@ -34,10 +35,12 @@ public class Menu {
                         select = Lue.merkki();
                         switch (select) {
                         case '1':
+                            System.out.println("Anna uusi avain (merkkijono)");
                             data = new String(Lue.rivi());
                             tree.insert(data);
                             break;
                         case '2':
+                            System.out.println("Anna etsitt�v� avain (merkkijono)");
                             data = Lue.rivi();
                             if (tree.find(data)!=null) { // löytyykö?
                             	System.out.println("Avain l�ytyis");
@@ -47,8 +50,10 @@ public class Menu {
                             
                             break;
                         case '3':
-                            tree.preOrder();
-                            char h = Lue.merkki(); // pysäytetään kontrolli
+                            System.out.println("Puun j�rjestys");
+                            tree.inOrder();
+                            System.out.println();
+                            //char h = Lue.merkki(); // pysäytetään kontrolli
                             break;
                         case '4':
                             data = Lue.rivi();
