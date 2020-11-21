@@ -5,15 +5,15 @@ public class Main {
 
 		System.out.println("The Min Heap is ");
 		Node minHeap = new Node(15);
+		minHeap.insert(1);
 		minHeap.insert(5);
-		minHeap.insert(3);
-		minHeap.insert(17);
-		minHeap.insert(10);
-		minHeap.insert(84);
-		minHeap.insert(19);
-		minHeap.insert(6);
-		minHeap.insert(22);
-		minHeap.insert(9);
+		minHeap.insert(20);
+		minHeap.insert(14);
+		minHeap.insert(88);
+		minHeap.insert(12);
+		minHeap.insert(5);
+		minHeap.insert(50);
+		minHeap.insert(5);
 		minHeap.minHeap();
 
 		minHeap.print();
