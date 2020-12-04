@@ -21,6 +21,9 @@ public class UsingJCAPI {
 		// J‰rjestet‰‰n numeron mukaan
 		Collections.sort(cardUsers);
 
+		System.out.println("");
+		System.out.println("Lajiteltu lista, lajitteluperuste matkustajanumero(m‰‰ritelty lambdalausekkeella)");
+
 		Iterator itr = cardUsers.iterator();
 		while (itr.hasNext()) {
 			System.out.println(itr.next());
